@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Option, Question, Quiz, QuizConfig } from '../tsfiles/index';
+import { Option, Que, Quiz, QuizConfig } from '../tsfiles/index';
 
 @Component({
   selector: 'app-quiz',
@@ -176,7 +176,7 @@ export class QuizComponent implements OnInit {
       this.quiz.questions.slice(this.pager.index, this.pager.index + this.pager.size) : [];
   }
 
-  onSelect(question: Question, option: Option) {
+  onSelect(question: Que, option: Option) {
     if (question.questionTypeId === 1) {
       question.options.forEach((x) => { if (x.id !== option.id) x.selected = false; });
     }
@@ -193,11 +193,11 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  isAnswered(question: Question) {
+  isAnswered(question: Que) {
     return question.options.find(x => x.selected) ? 'Answered' : 'Not Answered';
   };
 
-  isCorrect(question: Question) {
+  isCorrect(question: Que) {
     return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';
   };
 

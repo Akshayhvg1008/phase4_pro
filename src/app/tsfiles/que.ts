@@ -1,6 +1,6 @@
 import { Option } from './opt';
 
-export class Question {
+export class Que {
     id: number;
     name: string;
     questionTypeId: number;
