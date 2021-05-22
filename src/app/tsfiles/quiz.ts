@@ -1,12 +1,12 @@
 import { QuizConfig } from './qc';
-import { Question } from './que';
+import { Que } from './que';
 
 export class Quiz {
     id: number;
     name: string;
     description: string;
     config: QuizConfig;
-    questions: Question[];
+    questions: Que[];
 
     constructor(data: any) {
         if (data) {
@@ -16,7 +16,7 @@ export class Quiz {
             this.config = new QuizConfig(data.config);
             this.questions = [];
             data.questions.forEach(q => {
-                this.questions.push(new Question(q));
+                this.questions.push(new Que(q));
             });
         }
     }
