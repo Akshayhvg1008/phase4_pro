@@ -1,4 +1,4 @@
 export * from './opt';
-export * from './question';
+export * from './que';
 export * from './quiz';
-export * from './quiz-config';
+export * from './qc';
